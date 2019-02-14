@@ -1,0 +1,11 @@
+[Unit]
+Wants=docker.service
+After=docker.service
+ 
+[Service]
+RemainAfterExit=yes
+ExecStart=/usr/bin/docker start ipsec-vpn-server
+ExecStop=/usr/bin/docker stop ipsec-vpn-server
+ 
+[Install]
+WantedBy=multi-user.target
